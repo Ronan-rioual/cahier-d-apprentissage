@@ -1,0 +1,1129 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice : la moyenne &#8212; My Jupyter Book</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Distribution" href="Rappel_Notions_Statistiques.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Cahier d’apprentissage
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html">
+   Exercice : la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-les-jours-de-la-semaine">
+   Exercice : les jours de la semaine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-inversion-de-l-ordre-d-une-liste">
+   Exercice : inversion de l’ordre d’une liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-nombres-pairs-et-impairs-dans-des-listes">
+   Exercice : nombres pairs et impairs dans des listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-des-etoiles">
+   Exercice : des étoiles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-copie-de-listes">
+   Exercice : copie de listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-le-jeu-du-ou-du">
+   Exercice : le jeu du + ou du -
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-des-etoiles-avec-fonction">
+   Exercice : des étoiles (avec fonction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-print-ou-return">
+   Exercice :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   ou
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     return
+    </span>
+   </code>
+   ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-fonction-du-maximum">
+   Exercice : fonction du maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-que-fait-ce-programme-1">
+   Exercice : que fait ce programme (1) ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-la-balance">
+   Exercice : la balance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-le-palindrome">
+   Exercice : le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-tri-de-mots">
+   Exercice : tri de mots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#introduction-aux-tests-unitaires-l-instruction-assert">
+   Introduction aux tests unitaires : l’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-assert-avec-le-palindrome">
+   Exercice : assert avec le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-tp_dictionnaires.html">
+   TP sur les dictionnaires et les sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#qualitative">
+   Qualitative
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Commande_annaconda.html">
+   Les environnements virtuels sur Annaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html">
+   Site ressource pour les environnements virtuels avec anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#exemple-de-creation-d-environnement-virtuel">
+   exemple de création d’environnement virtuel:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#environnment-en-python-3-6">
+   Environnment en python 3.6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#environnement-en-python-3-7">
+   Environnement en python 3.7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#lister-les-environnement">
+   Lister les environnement :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#activer-un-environnement">
+   Activer un environnement :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#lister-les-modules">
+   Lister les modules:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#ajouter-un-module">
+   Ajouter un module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#qu-est-ce-qu-un-fichier-yaml">
+   Qu’est ce qu’un fichier YAML ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#creer-un-environnement-a-partir-d-un-fichier-yaml">
+   Créer un environnement à partir d’un fichier YAML :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#export-d-un-environnement-a-partir-d-un-fichier-yaml">
+   export d’un environnement à partir d’un fichier YAML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#executer-un-fichier-python-depuis-annaconda">
+   Executer un fichier python depuis Annaconda :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#activer-un-environnement-puis-lancer-un-fichier-python-depuis-un-bat">
+   Activer un environnement puis lancer un fichier python depuis un .bat
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#moyenne">
+   Moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#mediane">
+   Médiane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#variance">
+   Variance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#ecart-type">
+   Écart type
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#fonction-gaussienne">
+   Fonction gaussienne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#outliers">
+   Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#centile">
+   Centile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#ecart-interquartile">
+   Écart interquartile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#la-covariance">
+   La covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#le-coefficient-de-correlation-de-pearson">
+   Le coefficient de corrélation de pearson
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#la-boite-a-moustache">
+   La boite à moustache
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercice : la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-les-jours-de-la-semaine">
+   Exercice : les jours de la semaine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-inversion-de-l-ordre-d-une-liste">
+   Exercice : inversion de l’ordre d’une liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-nombres-pairs-et-impairs-dans-des-listes">
+   Exercice : nombres pairs et impairs dans des listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-des-etoiles">
+   Exercice : des étoiles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-copie-de-listes">
+   Exercice : copie de listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-le-jeu-du-ou-du">
+   Exercice : le jeu du + ou du -
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-des-etoiles-avec-fonction">
+   Exercice : des étoiles (avec fonction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-print-ou-return">
+   Exercice :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   ou
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     return
+    </span>
+   </code>
+   ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-fonction-du-maximum">
+   Exercice : fonction du maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-que-fait-ce-programme-1">
+   Exercice : que fait ce programme (1) ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-la-balance">
+   Exercice : la balance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-le-palindrome">
+   Exercice : le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-tri-de-mots">
+   Exercice : tri de mots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#introduction-aux-tests-unitaires-l-instruction-assert">
+   Introduction aux tests unitaires : l’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exercice-assert-avec-le-palindrome">
+   Exercice : assert avec le palindrome
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/pages/revision.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/pages/revision.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exercice : la moyenne
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-les-jours-de-la-semaine">
+   Exercice : les jours de la semaine
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-inversion-de-l-ordre-d-une-liste">
+   Exercice : inversion de l’ordre d’une liste
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-nombres-pairs-et-impairs-dans-des-listes">
+   Exercice : nombres pairs et impairs dans des listes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-des-etoiles">
+   Exercice : des étoiles
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-copie-de-listes">
+   Exercice : copie de listes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-le-jeu-du-ou-du">
+   Exercice : le jeu du + ou du -
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-des-etoiles-avec-fonction">
+   Exercice : des étoiles (avec fonction)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-print-ou-return">
+   Exercice :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   ou
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     return
+    </span>
+   </code>
+   ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-1">
+     Version 1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-2">
+     Version 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-fonction-du-maximum">
+   Exercice : fonction du maximum
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-que-fait-ce-programme-1">
+   Exercice : que fait ce programme (1) ?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-la-balance">
+   Exercice : la balance
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-le-palindrome">
+   Exercice : le palindrome
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-tri-de-mots">
+   Exercice : tri de mots
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-aux-tests-unitaires-l-instruction-assert">
+   Introduction aux tests unitaires : l’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-assert-avec-le-palindrome">
+   Exercice : assert avec le palindrome
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercice-la-moyenne">
+<h1>Exercice : la moyenne<a class="headerlink" href="#exercice-la-moyenne" title="Permalink to this headline">¶</a></h1>
+<p>Soit la liste <code class="docutils literal notranslate"><span class="pre">lst_temperatures</span> <span class="pre">=</span> <span class="pre">[12,</span> <span class="pre">13,</span> <span class="pre">14,</span> <span class="pre">28]</span></code>, écrire un programme qui permet de calculer la moyenne de ces valeurs :</p>
+<ul class="simple">
+<li><p>Avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code></p></li>
+<li><p>Avec une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst_temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">28</span><span class="p">]</span>
+
+<span class="n">somme_for</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">somme_for</span> <span class="o">+=</span> <span class="n">lst_temperatures</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">somme_for</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">somme_while</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst_temperatures</span><span class="p">):</span>
+    <span class="n">somme_while</span><span class="o">+=</span> <span class="n">lst_temperatures</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">somme_while</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.75
+16.75
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-les-jours-de-la-semaine">
+<h1>Exercice : les jours de la semaine<a class="headerlink" href="#exercice-les-jours-de-la-semaine" title="Permalink to this headline">¶</a></h1>
+<p>Constituer une liste contenant le nom des sept jours de la semaine. À partir de cette liste comment peut-on récupérer :</p>
+<ul class="simple">
+<li><p>Les 5 premiers jours de la semaine</p></li>
+<li><p>Ceux du week-end</p></li>
+<li><p>Uniquement le dernier élément</p></li>
+<li><p>Tous les éléments sauf le dernier</p></li>
+</ul>
+<p>Indications :</p>
+<ul class="simple">
+<li><p>Tester vos propositions</p></li>
+<li><p>Quel est le type des éléments renvoyés ?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">semaine</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lundi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mardi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mercredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Jeudi&quot;</span><span class="p">,</span> <span class="s2">&quot;Vendredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Samedi&quot;</span><span class="p">,</span> <span class="s2">&quot;Dimanche&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">semaine</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">semaine</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">semaine</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">semaine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">semaine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">semaine</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">semaine</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lundi&#39;, &#39;Mardi&#39;, &#39;Mercredi&#39;, &#39;Jeudi&#39;, &#39;Vendredi&#39;]
+&lt;class &#39;list&#39;&gt;
+[&#39;Samedi&#39;, &#39;Dimanche&#39;]
+Dimanche
+&lt;class &#39;str&#39;&gt;
+Lundi
+Mardi
+Mercredi
+Jeudi
+Vendredi
+Samedi
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-inversion-de-l-ordre-d-une-liste">
+<h1>Exercice : inversion de l’ordre d’une liste<a class="headerlink" href="#exercice-inversion-de-l-ordre-d-une-liste" title="Permalink to this headline">¶</a></h1>
+<p>Soit une liste quelconque d’éléments, écrire un programme qui en inverse l’ordre. On utilisera une seule liste pour effectuer l’opération.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">semaine</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lundi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mardi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mercredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Jeudi&quot;</span><span class="p">,</span> <span class="s2">&quot;Vendredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Samedi&quot;</span><span class="p">,</span> <span class="s2">&quot;Dimanche&quot;</span><span class="p">]</span>
+<span class="n">semaine</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">semaine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dimanche&#39;, &#39;Samedi&#39;, &#39;Vendredi&#39;, &#39;Jeudi&#39;, &#39;Mercredi&#39;, &#39;Mardi&#39;, &#39;Lundi&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-nombres-pairs-et-impairs-dans-des-listes">
+<h1>Exercice : nombres pairs et impairs dans des listes<a class="headerlink" href="#exercice-nombres-pairs-et-impairs-dans-des-listes" title="Permalink to this headline">¶</a></h1>
+<p>On souhaite stocker dans deux listes différentes les nombres saisis par l’utilisateur selon s’il s’agit d’un nombre pair ou d’un nombre impair. Le programme se terminera lorsque l’utilisateur aura entré la valeur <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">impaire</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">demande</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="nb">int</span><span class="p">(</span><span class="n">demande</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">demande</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">demande</span><span class="p">)</span><span class="o">%</span><span class="k">2</span> == 0:
+        <span class="n">pair</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">demande</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">impaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">demande</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">impaire</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+-1
+[2, 4]
+[1, 3, 5, -1]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le programme ci-dessus fonctionne, mais il ne gère pas les erreurs de saisie. En effet si l’utilisateur ne saisit pas un nombre, le programme s’interrompt brutalement (erreur Python).
+En Python, on peut contrôler si une valeur est numérique avec la <strong>méthode</strong> <code class="docutils literal notranslate"><span class="pre">isnumeric()</span></code> qui s’applique (uniquement) sur une chaîne de caractères et qui renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Exemples :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valeur</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+<span class="n">valeur</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span>  <span class="c1"># True</span>
+<span class="n">valeur</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">valeur</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span>  <span class="c1"># False</span>
+<span class="n">valeur</span> <span class="o">=</span> <span class="s2">&quot;-1&quot;</span>
+<span class="n">valeur</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span>  <span class="c1"># False</span>
+<span class="n">valeur</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">valeur</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span>  <span class="c1"># Erreur !</span>
+</pre></div>
+</div>
+<p>En utilisant <code class="docutils literal notranslate"><span class="pre">isnumeric()</span></code>, modifier le programme ci-dessus afin d’afficher un message d’erreur à l’utilisateur s’il saisit une valeur non numérique.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">impaire</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">demande</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">verification</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">verification</span><span class="p">:</span>
+    <span class="n">demande</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">demande</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">demande</span><span class="p">)</span> <span class="o">%</span><span class="k">2</span> == 0:
+            <span class="n">pair</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">demande</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">impaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">demande</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">demande</span> <span class="o">==</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span>
+        <span class="n">verification</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Il faut une valeur numérique&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">impaire</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+pouet
+Il faut une valeur numérique
+-1
+[2]
+[3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-des-etoiles">
+<h1>Exercice : des étoiles<a class="headerlink" href="#exercice-des-etoiles" title="Permalink to this headline">¶</a></h1>
+<p>Ecrire un programme qui permet d’afficher un “graphique” de ce type :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>
+<span class="o">**</span>
+<span class="o">***</span>
+<span class="o">****</span>
+<span class="o">*****</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Le nombre d’étoiles sera défini au préalable dans une variable.</p></li>
+<li><p>Faire une version avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> et une version avec avec une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">etoile</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span> <span class="n">etoile</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*
+**
+***
+****
+*****
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">etoile</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*
+**
+***
+****
+*****
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-copie-de-listes">
+<h1>Exercice : copie de listes<a class="headerlink" href="#exercice-copie-de-listes" title="Permalink to this headline">¶</a></h1>
+<p>Etant données deux listes, on souhaite copier la première dans la deuxième et ainsi pouvoir modifier une valeur dans la deuxième liste sans que cela ne modifie la première.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lst1</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>.</p></li>
+<li><p>On copie <code class="docutils literal notranslate"><span class="pre">lst1</span></code> dans <code class="docutils literal notranslate"><span class="pre">lst2</span></code>.</p></li>
+<li><p>On modifie le premier élément de <code class="docutils literal notranslate"><span class="pre">lst2</span></code> en mettant la valeur <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p></li>
+<li><p>On doit obtenir :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">lst1</span></code> : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> (inchangée)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lst2</span></code> : <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">2,</span> <span class="pre">3]</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Le programme suivant a été écrit :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">lst2</span> <span class="o">=</span> <span class="n">lst1</span>
+<span class="n">lst2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Que remarquez-vous ?</p></li>
+<li><p>Modifiez le pour qu’il réponde au problème posé.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">lst2</span> <span class="o">=</span> <span class="n">lst1</span><span class="p">[:]</span>
+<span class="n">lst2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 2, 3]
+[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-le-jeu-du-ou-du">
+<h1>Exercice : le jeu du + ou du -<a class="headerlink" href="#exercice-le-jeu-du-ou-du" title="Permalink to this headline">¶</a></h1>
+<p>L’ordinateur choisit un nombre au hasard entre 1 et 100 et l’utilisateur doit deviner ce nombre mystère en respectant la règle suivante :</p>
+<ul class="simple">
+<li><p>Version 1</p>
+<ul>
+<li><p>L’utilisateur propose un nombre.</p></li>
+<li><p>Le programme lui dit s’il est trop petit ou trop grand.</p></li>
+<li><p>Et ainsi de suite tant que l’utilisateur n’a pas trouvé le nombre mystère.</p></li>
+</ul>
+</li>
+<li><p>Version 2</p>
+<ul>
+<li><p>Ajouter une gestion d’erreur si l’utilisateur ne rentre pas un nombre entre 1 et 100 ou s’il rentre autre chose qu’un nombre.</p></li>
+</ul>
+</li>
+<li><p>Version 3</p>
+<ul>
+<li><p>Indiquer à l’utilisateur en combien de coups il a trouvé le nombre mystère.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="exercice-des-etoiles-avec-fonction">
+<h1>Exercice : des étoiles (avec fonction)<a class="headerlink" href="#exercice-des-etoiles-avec-fonction" title="Permalink to this headline">¶</a></h1>
+<p>Reprendre <a class="reference external" href="#exercice-des-etoiles">l’exercice sur les étoiles</a>, mais en l’intégrant dans une fonction <code class="docutils literal notranslate"><span class="pre">affiche_etoiles</span></code> qui prend en paramètres le nombre d’étoiles.</p>
+</div>
+<div class="section" id="exercice-print-ou-return">
+<h1>Exercice : <code class="docutils literal notranslate"><span class="pre">print</span></code> ou <code class="docutils literal notranslate"><span class="pre">return</span></code> ?<a class="headerlink" href="#exercice-print-ou-return" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-1">
+<h2>Version 1<a class="headerlink" href="#version-1" title="Permalink to this headline">¶</a></h2>
+<p>Dans un programme principal, on a écrit la commande suivante : <code class="docutils literal notranslate"><span class="pre">print(function1(5))</span></code>. Écrire la fonction
+<code class="docutils literal notranslate"><span class="pre">function1</span></code> de telle sorte que l’exécution de la commande précédente affiche comme résultat <strong>6</strong> dans l’interpréteur
+Python.</p>
+</div>
+<div class="section" id="version-2">
+<h2>Version 2<a class="headerlink" href="#version-2" title="Permalink to this headline">¶</a></h2>
+<p>Dans un programme principal, on a écrit la commande suivante : <code class="docutils literal notranslate"><span class="pre">function2(5)</span></code>. Écrire la fonction <code class="docutils literal notranslate"><span class="pre">function2</span></code>
+de telle sorte que l’exécution de la commande précédente affiche comme résultat <strong>6</strong> dans l’interpréteur Python.</p>
+</div>
+</div>
+<div class="section" id="exercice-fonction-du-maximum">
+<h1>Exercice : fonction du maximum<a class="headerlink" href="#exercice-fonction-du-maximum" title="Permalink to this headline">¶</a></h1>
+<p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">mon_maximum</span></code> qui prend en entrée une liste de valeurs et qui renvoie le maximum ainsi que son indice dans la liste.</p>
+</div>
+<div class="section" id="exercice-que-fait-ce-programme-1">
+<h1>Exercice : que fait ce programme (1) ?<a class="headerlink" href="#exercice-que-fait-ce-programme-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Sans écrire</strong> ce programme indiquez ce que produit le programme suivant à l’écran :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">add1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">add1</span>
+
+<span class="k">def</span> <span class="nf">compute2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">add2</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">res1</span> <span class="o">=</span> <span class="n">compute1</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+
+<span class="n">res2</span> <span class="o">=</span> <span class="n">compute2</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercice-la-balance">
+<h1>Exercice : la balance<a class="headerlink" href="#exercice-la-balance" title="Permalink to this headline">¶</a></h1>
+<p>Ecrire un programme qui en fonction du poids d’un coli, nous donne le prix de l’envoi.</p>
+<ul class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">lit_poids</span></code> qui renvoie le poids du coli (dans notre cas on simulera la pesée en demandant le poids à l’utilisateur).</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">donne_prix</span></code> qui renvoie le prix du coli en fonction de son poids :</p>
+<ul>
+<li><p>poids inférieur à 100 g : 2 €</p></li>
+<li><p>poids compris entre 100 et 500 g : 5 €</p></li>
+<li><p>poids compris entre 500 et 1000 g : 10 €</p></li>
+<li><p>poids compris entre 1000 et 30000 g : 30 €</p></li>
+</ul>
+</li>
+<li><p>Au-delà de 30 kg, on indiquera une erreur à l’utilisateur. Ce n’est pas la fonction <code class="docutils literal notranslate"><span class="pre">donne_prix</span></code> qui effectuera l’affichage de l’erreur, mais le programme principal.</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-le-palindrome">
+<h1>Exercice : le palindrome<a class="headerlink" href="#exercice-le-palindrome" title="Permalink to this headline">¶</a></h1>
+<p>Le palindrome est une figure de style désignant un texte ou un mot dont l’ordre des lettres reste le même qu’on le lise de gauche à droite ou de droite à gauche (plus d’informations sur <a class="reference external" href="https://fr.wikipedia.org/wiki/Palindrome">Wikipédia</a>). Exemples de mots : “ici”, “kayak”, “Laval”, …</p>
+<p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">est_palindrome</span></code> qui prend en paramètre une chaîne de caractères et qui renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<ul class="simple">
+<li><p>Faire un jeu de tests dans le programme principal avec une liste de mots.</p></li>
+<li><p>Penser à ignorer les majuscules / minuscules.</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-tri-de-mots">
+<h1>Exercice : tri de mots<a class="headerlink" href="#exercice-tri-de-mots" title="Permalink to this headline">¶</a></h1>
+<p>Soit la chaîne de cararactères contenant les mots suivants : “python physique maths anglais”.
+Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">tri_mots</span></code> qui prend en paramètre une chaîne contenant des mots dans un ordre quelconque et qui retourne une chaîne avec des mots triés par ordre alphabétique.</p>
+</div>
+<div class="section" id="introduction-aux-tests-unitaires-l-instruction-assert">
+<h1>Introduction aux tests unitaires : l’instruction <code class="docutils literal notranslate"><span class="pre">assert</span></code><a class="headerlink" href="#introduction-aux-tests-unitaires-l-instruction-assert" title="Permalink to this headline">¶</a></h1>
+<p>Un des principaux problèmes de la programmation informatique est la détection de dysfonctionnements (bugs). Pour pallier à cela, on peut écrire des tests qui “garantissent” que le programme fonctionne conformément à nos attentes et qu’il fonctionne toujours même après si des modifications ont été apportées (par exemple des améliorations).</p>
+<p>Pour effectuer ces vérifications, on peut insérer des <code class="docutils literal notranslate"><span class="pre">print</span></code>. Cependant cela requiert que le programmeur vérifie à l’écran ce qui se passe, ce qui n’est ni commode ni très fiable.</p>
+<p>Une alternative (rudimentaire) est d’utiliser l’instruction <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">&lt;condition_booléenne&gt;</span></code>. Si la condition boolénne est fausse, le programme s’interrompera en provoquant une erreur.</p>
+<p>Exemple :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">a</span>  <span class="c1"># Ok</span>
+<span class="k">assert</span> <span class="n">b</span>  <span class="c1"># Erreur et interruption du programme</span>
+<span class="k">assert</span> <span class="n">c</span>  <span class="c1"># Jamais exécutée car le programme a été interrompu</span>
+</pre></div>
+</div>
+<p>Autre exemple :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mot</span> <span class="o">=</span> <span class="s2">&quot;bonjour&quot;</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>  <span class="c1"># Ok</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercice-assert-avec-le-palindrome">
+<h1>Exercice : assert avec le palindrome<a class="headerlink" href="#exercice-assert-avec-le-palindrome" title="Permalink to this headline">¶</a></h1>
+<p>Reprendre <a class="reference external" href="#exercice-le-palindrome">l’exercice sur le palindrome</a> et dans le programme principal, utiliser l’instruction <code class="docutils literal notranslate"><span class="pre">assert</span></code> pour valider le bon résultat de la fonction <code class="docutils literal notranslate"><span class="pre">est_palindrome</span></code>.</p>
+<ul class="simple">
+<li><p>Faire une version avec des listes</p></li>
+<li><p>Faire une version avec des dictionnaires</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Rappel_Notions_Statistiques.html" title="previous page">Distribution</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

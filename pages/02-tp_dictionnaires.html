@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP sur les dictionnaires et les sets &#8212; My Jupyter Book</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analyse de Données Massives" href="Annalyse des Données-Statistiques.html" />
+    <link rel="prev" title="Exercice : la moyenne" href="01-revisions-corr.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Cahier d’apprentissage
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html">
+   Exercice : la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-les-jours-de-la-semaine">
+   Exercice : les jours de la semaine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-inversion-de-l-ordre-d-une-liste">
+   Exercice : inversion de l’ordre d’une liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-nombres-pairs-et-impairs-dans-des-listes">
+   Exercice : nombres pairs et impairs dans des listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-des-etoiles">
+   Exercice : des étoiles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-copie-de-listes">
+   Exercice : copie de listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-le-jeu-du-ou-du">
+   Exercice : le jeu du + ou du -
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-des-etoiles-avec-fonction">
+   Exercice : des étoiles (avec fonction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-print-ou-return">
+   Exercice :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   ou
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     return
+    </span>
+   </code>
+   ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-fonction-du-maximum">
+   Exercice : fonction du maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-que-fait-ce-programme-1">
+   Exercice : que fait ce programme (1) ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-la-balance">
+   Exercice : la balance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-le-palindrome">
+   Exercice : le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-tri-de-mots">
+   Exercice : tri de mots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#introduction-aux-tests-unitaires-l-instruction-assert">
+   Introduction aux tests unitaires : l’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-assert-avec-le-palindrome">
+   Exercice : assert avec le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   TP sur les dictionnaires et les sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#qualitative">
+   Qualitative
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annalyse des Données-Statistiques.html#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Commande_annaconda.html">
+   Les environnements virtuels sur Annaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html">
+   Site ressource pour les environnements virtuels avec anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#exemple-de-creation-d-environnement-virtuel">
+   exemple de création d’environnement virtuel:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#environnment-en-python-3-6">
+   Environnment en python 3.6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#environnement-en-python-3-7">
+   Environnement en python 3.7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#lister-les-environnement">
+   Lister les environnement :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#activer-un-environnement">
+   Activer un environnement :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#lister-les-modules">
+   Lister les modules:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#ajouter-un-module">
+   Ajouter un module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#qu-est-ce-qu-un-fichier-yaml">
+   Qu’est ce qu’un fichier YAML ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#creer-un-environnement-a-partir-d-un-fichier-yaml">
+   Créer un environnement à partir d’un fichier YAML :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#export-d-un-environnement-a-partir-d-un-fichier-yaml">
+   export d’un environnement à partir d’un fichier YAML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#executer-un-fichier-python-depuis-annaconda">
+   Executer un fichier python depuis Annaconda :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#activer-un-environnement-puis-lancer-un-fichier-python-depuis-un-bat">
+   Activer un environnement puis lancer un fichier python depuis un .bat
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#moyenne">
+   Moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#mediane">
+   Médiane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#variance">
+   Variance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#ecart-type">
+   Écart type
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#fonction-gaussienne">
+   Fonction gaussienne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#outliers">
+   Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#centile">
+   Centile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#ecart-interquartile">
+   Écart interquartile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#la-covariance">
+   La covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#le-coefficient-de-correlation-de-pearson">
+   Le coefficient de corrélation de pearson
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#la-boite-a-moustache">
+   La boite à moustache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html">
+   Exercice : la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-les-jours-de-la-semaine">
+   Exercice : les jours de la semaine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-inversion-de-l-ordre-d-une-liste">
+   Exercice : inversion de l’ordre d’une liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-nombres-pairs-et-impairs-dans-des-listes">
+   Exercice : nombres pairs et impairs dans des listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-des-etoiles">
+   Exercice : des étoiles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-copie-de-listes">
+   Exercice : copie de listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-le-jeu-du-ou-du">
+   Exercice : le jeu du + ou du -
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-des-etoiles-avec-fonction">
+   Exercice : des étoiles (avec fonction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-print-ou-return">
+   Exercice :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   ou
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     return
+    </span>
+   </code>
+   ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-fonction-du-maximum">
+   Exercice : fonction du maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-que-fait-ce-programme-1">
+   Exercice : que fait ce programme (1) ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-la-balance">
+   Exercice : la balance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-le-palindrome">
+   Exercice : le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-tri-de-mots">
+   Exercice : tri de mots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#introduction-aux-tests-unitaires-l-instruction-assert">
+   Introduction aux tests unitaires : l’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-assert-avec-le-palindrome">
+   Exercice : assert avec le palindrome
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/pages/02-tp_dictionnaires.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/pages/02-tp_dictionnaires.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tp-magasin-en-ligne">
+   TP : Magasin en ligne
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1">
+     Question 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2">
+     Question 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3">
+     Question 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4">
+     Question 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-5">
+     Question 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-6">
+     Question 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-7">
+     Question 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tp-recettes-de-cuisine">
+   TP : recettes de cuisine
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#presentation-des-sets">
+     Présentation des sets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Question 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Question 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Question 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Question 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Question 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Question 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Question 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tp-gestion-de-bibliotheque">
+   TP : Gestion de bibliothèque
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Question 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Question 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Question 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Question 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Question 5
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tp-sur-les-dictionnaires-et-les-sets">
+<h1>TP sur les dictionnaires et les sets<a class="headerlink" href="#tp-sur-les-dictionnaires-et-les-sets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tp-magasin-en-ligne">
+<h2>TP : Magasin en ligne<a class="headerlink" href="#tp-magasin-en-ligne" title="Permalink to this headline">¶</a></h2>
+<p>Dans cet exercice, nous nous familiarisons avec les manipulations de dictionnaires sur une thématique de magasin en ligne.
+«Chez Geek and sons tout ce qui est inutile peut s’acheter, et tout ce qui peut s’acheter est un peu trop cher.»</p>
+<p>La base de prix des produits de Geek and sons est représentée en Python par un dictionnaire avec :</p>
+<ul class="simple">
+<li><p>les noms de produits, de type <code class="docutils literal notranslate"><span class="pre">str</span></code>, comme clés.</p></li>
+<li><p>les prix des produits, de type <code class="docutils literal notranslate"><span class="pre">float</span></code>, comme valeurs associées.</p></li>
+</ul>
+<p><strong>Attention : bien respecter l’ordre de présentation du code :</strong></p>
+<ol class="simple">
+<li><p>Les imports</p></li>
+<li><p>Les fonctions</p></li>
+<li><p>Le programme principal</p></li>
+</ol>
+<div class="section" id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h3>
+<p>Donner une expression d’un dictionnaire en Python qui permet de construire la base des produits correspondant à la
+table suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">Nom</span> <span class="n">du</span> <span class="n">produit</span>     <span class="o">|</span> <span class="n">Prix</span> <span class="n">TTC</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">Sabre</span> <span class="n">Laser</span>        <span class="o">|</span> <span class="mi">229</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="n">Mitendo</span> <span class="n">DX</span>         <span class="o">|</span> <span class="mf">127.30</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="n">Coussin</span> <span class="n">Linux</span>      <span class="o">|</span>  <span class="mf">74.50</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="n">Slip</span> <span class="n">Goldorak</span>      <span class="o">|</span>  <span class="mf">29.90</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="n">Station</span> <span class="n">Nextpresso</span> <span class="o">|</span> <span class="mf">184.60</span>   <span class="o">|</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">disponibilite</span></code> qui étant donnés un nom de produit
+et une base de produits, retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si le produit est présent dans la base, ou <code class="docutils literal notranslate"><span class="pre">False</span></code> sinon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">disponibilite</span><span class="p">(</span><span class="n">nom_prod</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">229</span><span class="p">,</span> <span class="s2">&quot;Mitendo DX&quot;</span> <span class="p">:</span> <span class="mf">127.30</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mf">74.50</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mf">29.90</span><span class="p">,</span> <span class="s2">&quot;Station Nextpresso&quot;</span> <span class="p">:</span> <span class="mf">184.60</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">disponibilite</span><span class="p">(</span><span class="n">nom_prod</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">nom_prod</span> <span class="ow">in</span> <span class="n">base_prod</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    
+<span class="n">demande</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;quel produit recherchez-vous ?&quot;</span><span class="p">)</span>
+<span class="n">disponibilite</span><span class="p">(</span><span class="n">demande</span><span class="p">,</span> <span class="n">dictionnaire</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quel produit recherchez-vous ?Sabre Laser
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">prix_moyen</span></code> qui, étant donnée une base de produits (contenant
+au moins un produit), retourne le prix moyen des produits disponibles.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prix_moyen</span><span class="p">(</span><span class="n">base_prod</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">229</span><span class="p">,</span> <span class="s2">&quot;Mitendo DX&quot;</span> <span class="p">:</span> <span class="mf">127.30</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mf">74.50</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mf">29.90</span><span class="p">,</span> <span class="s2">&quot;Station Nextpresso&quot;</span> <span class="p">:</span> <span class="mf">184.60</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">prix_moyen</span><span class="p">(</span><span class="n">base_prod</span><span class="p">):</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">prix</span> <span class="ow">in</span> <span class="n">base_prod</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">somme</span> <span class="o">+=</span> <span class="n">prix</span>
+    <span class="k">return</span> <span class="n">somme</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">base_prod</span><span class="p">)</span>
+
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">prix_moyen</span><span class="p">(</span><span class="n">dictionnaire</span><span class="p">))</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>129.06
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">fourchette_prix</span></code> qui, étant donnés un prix minimum
+mini, un prix maximum maxi et une base de produits, retourne l’ensemble des noms de produits
+disponibles dans cette fourchette de prix.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fourchette_prix</span><span class="p">(</span><span class="n">prix_min</span><span class="p">,</span> <span class="n">prix_max</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">229</span><span class="p">,</span> <span class="s2">&quot;Mitendo DX&quot;</span> <span class="p">:</span> <span class="mf">127.30</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mf">74.50</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mf">29.90</span><span class="p">,</span> <span class="s2">&quot;Station Nextpresso&quot;</span> <span class="p">:</span> <span class="mf">184.60</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">fourchette_prix</span><span class="p">(</span><span class="n">prix_min</span><span class="p">,</span> <span class="n">prix_max</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">cle</span><span class="p">,</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">base_prod</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">valeur</span> <span class="o">&gt;=</span> <span class="n">prix_min</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">valeur</span> <span class="o">&lt;=</span>  <span class="n">prix_max</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+        
+            
+    
+<span class="n">prix_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez le prix minimum&quot;</span><span class="p">))</span>
+<span class="n">prix_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez le prix maximum&quot;</span><span class="p">))</span>
+<span class="n">fourchette_prix</span><span class="p">(</span><span class="n">prix_min</span><span class="p">,</span> <span class="n">prix_max</span><span class="p">,</span> <span class="n">dictionnaire</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entrez le prix minimum1
+Entrez le prix maximum200
+Mitendo DX
+Coussin Linux
+Slip Goldorak
+Station Nextpresso
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h3>
+<p>Le panier est un concept omniprésent dans les sites marchands, Geeks and sons n’échappe pas à la règle. En Python, le panier du client sera représenté par un dictionnaire, avec :</p>
+<ul class="simple">
+<li><p>les noms de produits comme clés.</p></li>
+<li><p>une quantité d’achat comme valeurs associées.</p></li>
+</ul>
+<p>Donner une expression Python correspondant à l’achat de 3 sabres lasers, de 2 coussins Linux
+et de 1 slip Goldorak.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">achats</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-6">
+<h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">tous_disponibles</span></code> qui, étant donnés un panier d’achat et une base de produits, retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si tous les produits demandés sont disponibles, ou <code class="docutils literal notranslate"><span class="pre">False</span></code> sinon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tous_disponibles</span><span class="p">(</span><span class="n">panier_achat</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">229</span><span class="p">,</span> <span class="s2">&quot;Mitendo DX&quot;</span> <span class="p">:</span> <span class="mf">127.30</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mf">74.50</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mf">29.90</span><span class="p">,</span> <span class="s2">&quot;Station Nextpresso&quot;</span> <span class="p">:</span> <span class="mf">184.60</span><span class="p">}</span>
+<span class="n">achats</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">tous_disponibles</span><span class="p">(</span><span class="n">panier_achat</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">panier_achat</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base_prod</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>  
+    
+<span class="n">tous_disponibles</span><span class="p">(</span><span class="n">achats</span><span class="p">,</span> <span class="n">dictionnaire</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-7">
+<h3>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">prix_achats</span></code> qui, étant donnés un panier d’achat et une base de produits, retourne le prix total correspondant.</p>
+<ul class="simple">
+<li><p>Faire une version qui suppose que tous les articles du panier sont disponibles dans la base des produits.</p></li>
+<li><p>Proposer une version qui renvoie une erreur si l’article du panier ne peut être trouvé dans la base.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prix_achats</span><span class="p">(</span><span class="n">panier_achat</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">229</span><span class="p">,</span> <span class="s2">&quot;Mitendo DX&quot;</span> <span class="p">:</span> <span class="mf">127.30</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mf">74.50</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mf">29.90</span><span class="p">,</span> <span class="s2">&quot;Station Nextpresso&quot;</span> <span class="p">:</span> <span class="mf">184.60</span><span class="p">}</span>
+<span class="n">achats</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sabre Laser&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Coussin Linux&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Slip Goldorak&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;JDG&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+
+
+
+<span class="k">def</span> <span class="nf">prix_achats</span><span class="p">(</span><span class="n">panier_achat</span><span class="p">,</span> <span class="n">base_prod</span><span class="p">):</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">for</span> <span class="n">cle</span><span class="p">,</span> <span class="n">quantite</span> <span class="ow">in</span> <span class="n">panier_achat</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">cle</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base_prod</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;article </span><span class="si">{</span><span class="n">cle</span><span class="si">}</span><span class="s2"> n&#39;est pas disponible&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">prix</span> <span class="o">=</span> <span class="n">base_prod</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span>
+            <span class="n">somme</span> <span class="o">+=</span> <span class="p">(</span><span class="n">quantite</span> <span class="o">*</span> <span class="n">prix</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le total est de&quot;</span><span class="p">,</span> <span class="n">somme</span><span class="p">)</span>
+   
+<span class="n">prix_achats</span><span class="p">(</span><span class="n">achats</span><span class="p">,</span> <span class="n">dictionnaire</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;article JDG n&#39;est pas disponible
+le total est de 865.9
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tp-recettes-de-cuisine">
+<h2>TP : recettes de cuisine<a class="headerlink" href="#tp-recettes-de-cuisine" title="Permalink to this headline">¶</a></h2>
+<p>Dans cet exercice, on s’intéresse à la définition de fonctions permettant de manipuler un livre
+de recettes de cuisine. Comme tout bon livre de recettes qui se respecte, chaque recette décrit
+notamment l’ensemble des ingrédients qui la composent. À titre d’exemple, un livre de
+recettes de desserts pourrait contenir les informations suivantes :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|--------------------|----------------------------------------|</span>
+<span class="o">|</span> <span class="n">Recette</span>            <span class="o">|</span> <span class="n">Ingrédients</span>                            <span class="o">|</span>
+<span class="o">|--------------------|-----------------------------------------</span>
+<span class="o">|</span> <span class="n">Gâteau</span> <span class="n">au</span> <span class="n">chocolat</span> <span class="o">|</span> <span class="n">chocolat</span><span class="p">,</span> <span class="n">oeufs</span><span class="p">,</span> <span class="n">farine</span><span class="p">,</span> <span class="n">sucre</span><span class="p">,</span> <span class="n">beurre</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">Gâteau</span> <span class="n">au</span> <span class="n">yaourt</span>   <span class="o">|</span> <span class="n">yaourt</span><span class="p">,</span> <span class="n">oeufs</span><span class="p">,</span> <span class="n">farine</span><span class="p">,</span> <span class="n">sucre</span>           <span class="o">|</span>
+<span class="o">|</span> <span class="n">Crêpes</span>             <span class="o">|</span> <span class="n">oeufs</span><span class="p">,</span> <span class="n">farine</span><span class="p">,</span> <span class="n">lait</span>                    <span class="o">|</span>
+<span class="o">|</span> <span class="n">Quatre</span><span class="o">-</span><span class="n">quarts</span>      <span class="o">|</span> <span class="n">oeufs</span><span class="p">,</span> <span class="n">farine</span><span class="p">,</span> <span class="n">sucre</span><span class="p">,</span> <span class="n">beurre</span>           <span class="o">|</span>
+<span class="o">|</span> <span class="n">Kouign</span> <span class="n">Amann</span>       <span class="o">|</span> <span class="n">farine</span><span class="p">,</span> <span class="n">sucre</span><span class="p">,</span> <span class="n">beurre</span>                  <span class="o">|</span>
+</pre></div>
+</div>
+<p>Un livre de recettes est donc représenté en Python par un dictionnaire avec :</p>
+<ul class="simple">
+<li><p>les noms des recettes, de type <code class="docutils literal notranslate"><span class="pre">str</span></code>, comme clés.</p></li>
+<li><p>l’ensemble des ingrédients, de type <code class="docutils literal notranslate"><span class="pre">set</span></code> (chaque ingrédient du <code class="docutils literal notranslate"><span class="pre">set</span></code> étant un <code class="docutils literal notranslate"><span class="pre">str</span></code>).</p></li>
+</ul>
+<div class="section" id="presentation-des-sets">
+<h3>Présentation des sets<a class="headerlink" href="#presentation-des-sets" title="Permalink to this headline">¶</a></h3>
+<p>Inspiration : https://python.sdv.univ-paris-diderot.fr/13_dictionnaires_tuples_sets/</p>
+<p>Les variables de type <code class="docutils literal notranslate"><span class="pre">set</span></code> représentent un autre type d’objet séquentiel qui peut se révéler très pratique. Ils ont la particularité d’être <strong>non modifiables</strong>, <strong>non ordonnés</strong> et de ne contenir que des éléments ont la <strong>valeur est unique</strong>. Pour créer un nouveau set on peut utiliser les accolades :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">{1, 2, 3}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">&lt;class &#39;set&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Notez que :</p>
+<ul class="simple">
+<li><p>La répétition du 3 dans la définition du set en ligne 1 donne au final un seul 3 car chaque élément ne peut être présent qu’une seule fois.</p></li>
+<li><p>Les set et et les dictionnaires utilisent tous les deux des accolades. Cependant, le set sera défini seulement par des valeurs comme <code class="docutils literal notranslate"><span class="pre">{val1,</span> <span class="pre">val2,</span> <span class="pre">...}</span></code> alors que le dictionnaire aura toujours des couples clé/valeur <code class="docutils literal notranslate"><span class="pre">{clé1:</span> <span class="pre">val1,</span> <span class="pre">clé2:</span> <span class="pre">val2,</span> <span class="pre">...}</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>s1 = {1, 2, 3}
+&gt;&gt;&gt; type(s1)
+&lt;class &#39;set&#39;&gt;
+d1 = {&#39;a1&#39;: 1, &#39;a2&#39;: 2}
+&gt;&gt;&gt; type(d1)
+&lt;class &#39;dict&#39;&gt;
+</pre></div>
+</div>
+<p>Pour initialiser un set vide, on ne peut pas utiliser <code class="docutils literal notranslate"><span class="pre">{}</span></code> car il y a confusion avec les dictionnaires. Ainsi on utilisera simplement la fonction <code class="docutils literal notranslate"><span class="pre">set()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>De plus la fonction <code class="docutils literal notranslate"><span class="pre">set()</span></code> peut prendre en argument n’importe quel objet itérable (c’est à dire qu’on peut parcourir) et le convertit en set (opération de casting), par exemple :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># Conversion d&#39;une liste en set</span>
+<span class="go">{1, 2, 4}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Conversion d&#39;un tuple en set</span>
+<span class="go">{1, 2}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="go">{0, 1, 2, 3, 4}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">({</span><span class="s2">&quot;clé1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;clé2&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="go">{&#39;clé1&#39;, &#39;clé2&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">([</span><span class="s2">&quot;ti&quot;</span><span class="p">,</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="s2">&quot;to&quot;</span><span class="p">])</span>
+<span class="go">{&#39;ti&#39;, &#39;to&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">(</span><span class="s2">&quot;Maître corbeau sur un arbre perché&quot;</span><span class="p">)</span>
+<span class="go">{&#39;h&#39;, &#39;u&#39;, &#39;o&#39;, &#39;b&#39;, &#39; &#39;, &#39;M&#39;, &#39;a&#39;, &#39;p&#39;, &#39;n&#39;, &#39;e&#39;, &#39;é&#39;, &#39;c&#39;, &#39;î&#39;, &#39;s&#39;, &#39;t&#39;, &#39;r&#39;}</span>
+</pre></div>
+</div>
+<p>Nous avons dit plus haut que les sets ne sont pas ordonnés :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Par conséquent, il est impossible de récupérer un élément par sa position. Il est également impossible de modifier un de ses éléments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;set&#39; object is not subscriptable</span>
+</pre></div>
+</div>
+<p>Par contre, les sets sont itérables :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>Si on ne peut pas modifier le contenu directement, on peut ajouter ou supprimer des éléments :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">{2, 3}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">{1, 2, 3}</span>
+</pre></div>
+</div>
+<p>Les variables de type <code class="docutils literal notranslate"><span class="pre">set</span></code> sont très utiles pour rechercher les éléments uniques d’une suite d’éléments. Cela revient à éliminer tous les doublons. Par exemple :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">{1, 2, 3}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lst2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lst2</span>
+<span class="go">[1, 2, 3]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Question 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Donner un dictionnaire en Python  qui represente la base des recettes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">livre_recette</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Gâteau au chocolat&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;chocolat&quot;</span><span class="p">,</span> <span class="s2">&quot;oeufs&quot;</span><span class="p">,</span> <span class="s2">&quot;farine&quot;</span><span class="p">,</span> <span class="s2">&quot;sucre&quot;</span><span class="p">,</span> <span class="s2">&quot;beurre&quot;</span><span class="p">},</span> <span class="s2">&quot;Gâteau au yaourt&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;yaourt&quot;</span><span class="p">,</span> <span class="s2">&quot;oeufs&quot;</span><span class="p">,</span> <span class="s2">&quot;farine&quot;</span><span class="p">,</span> <span class="s2">&quot;sucre&quot;</span><span class="p">},</span> <span class="s2">&quot;Crêpes&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;oeufs&quot;</span><span class="p">,</span> <span class="s2">&quot;farine&quot;</span><span class="p">,</span> <span class="s2">&quot;lait&quot;</span><span class="p">},</span> <span class="s2">&quot;Quatre-quarts&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;oeufs&quot;</span><span class="p">,</span> <span class="s2">&quot;farine&quot;</span><span class="p">,</span> <span class="s2">&quot;sucre&quot;</span><span class="p">,</span> <span class="s2">&quot;beurre&quot;</span><span class="p">},</span> <span class="s2">&quot;Kouign Amann&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;farine&quot;</span><span class="p">,</span> <span class="s2">&quot;sucre&quot;</span><span class="p">,</span> <span class="s2">&quot;beurre&quot;</span><span class="p">}}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">livre_recette</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Gâteau au chocolat&#39;: {&#39;chocolat&#39;, &#39;beurre&#39;, &#39;sucre&#39;, &#39;oeufs&#39;, &#39;farine&#39;}, &#39;Gâteau au yaourt&#39;: {&#39;farine&#39;, &#39;sucre&#39;, &#39;oeufs&#39;, &#39;yaourt&#39;}, &#39;Crêpes&#39;: {&#39;farine&#39;, &#39;oeufs&#39;, &#39;lait&#39;}, &#39;Quatre-quarts&#39;: {&#39;farine&#39;, &#39;sucre&#39;, &#39;oeufs&#39;, &#39;beurre&#39;}, &#39;Kouign Amann&#39;: {&#39;farine&#39;, &#39;sucre&#39;, &#39;beurre&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Question 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">nb_ingredients</span></code> qui, étant donné un livre de recettes et
+le nom d’une recette contenue dans le livre, renvoie le nombre d’ingrédients nécessaires à la
+recette.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nb_ingredients</span><span class="p">(</span><span class="n">livre</span><span class="p">,</span> <span class="n">nom_recette</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">livre</span><span class="p">[</span><span class="n">nom_recette</span><span class="p">]))</span>
+        
+    
+<span class="n">recette_voulu</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;quelle recette recherchez-vous ?&quot;</span><span class="p">)</span> 
+<span class="n">nb_ingredients</span><span class="p">(</span><span class="n">livre_recette</span><span class="p">,</span> <span class="n">recette_voulu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quelle recette recherchez-vous ?Crêpes
+3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Question 3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">recette_avec</span></code> qui, étant donnés un livre de recettes et le
+nom d’un ingrédient, renvoie l’ensemble des recettes qui utilisent cet ingrédient.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recette_avec</span><span class="p">(</span><span class="n">livre</span><span class="p">,</span> <span class="n">ingredient</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">livre</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+      
+<span class="n">ingredient_voulu</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel ingrédient vous intéresse ? &quot;</span><span class="p">)</span>
+<span class="n">recette_avec</span><span class="p">(</span><span class="n">livre_recette</span><span class="p">,</span> <span class="n">ingredient_voulu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quel ingrédient vous intéresse ? oeufs
+Gâteau au chocolat
+Gâteau au yaourt
+Crêpes
+Quatre-quarts
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Question 4<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">tous_ingredients</span></code> qui, étant donné un livre de recettes renvoie l’ensemble des ingrédients (sans doublons).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tous_ingredients</span><span class="p">(</span><span class="n">livre</span><span class="p">):</span>
+    <span class="n">liste_temporaire</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">livre</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+            <span class="n">liste_temporaire</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">liste_temporaire</span><span class="p">)</span>
+    
+    
+<span class="n">tous_ingredients</span><span class="p">(</span><span class="n">livre_recette</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;chocolat&#39;, &#39;beurre&#39;, &#39;sucre&#39;, &#39;oeufs&#39;, &#39;lait&#39;, &#39;farine&#39;, &#39;yaourt&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Question 5<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Tout livre de recettes contient une table des ingrédients (index) permettant d’associer à chaque ingrédient l’ensemble des recettes qui l’utilisent. On peut représenter en Python une telle table par un dictionnaire dans lequel une clé est un ingrédient et la valeur associée est l’ensemble des recettes qui l’utilisent.
+Écrire la fonction <code class="docutils literal notranslate"><span class="pre">table_ingredients</span></code> qui, étant donné un livre de recettes, renvoie la table des ingrédients associée.</p>
+<p>Exemple :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;chocolat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;gâteau chocolat&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;oeufs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;crêpes&#39;</span><span class="p">,</span> <span class="s1">&#39;gâteau chocolat&#39;</span><span class="p">,</span> <span class="s1">&#39;gâteau yaourt&#39;</span><span class="p">,</span> <span class="s1">&#39;quatre-quarts&#39;</span><span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Question 6<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">ingredient_principal</span></code> qui, étant donné un livre de recettes, renvoie le nom de l’ingrédient utilisé par le plus grand nombre de recettes.</p>
+</div>
+<div class="section" id="id7">
+<h3>Question 7<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Certaines personnes sont allergiques à certains ingrédients. On aimerait donc pouvoir ne
+conserver d’un livre de recettes que celles qui n’utilisent pas un ingrédient donné.</p>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">recettes_sans</span></code> qui, étant donné un livre de recettes et un ingrédient, renvoie un nouveau livre de recettes ne contenant que des recettes n’utilisant pas l’ingrédient.</p>
+</div>
+</div>
+<div class="section" id="tp-gestion-de-bibliotheque">
+<h2>TP : Gestion de bibliothèque<a class="headerlink" href="#tp-gestion-de-bibliotheque" title="Permalink to this headline">¶</a></h2>
+<p>Dans cet exercice, nous illustrons la manipulation des dictionnaires en travaillant sur une “base de données” de livres empruntables dans une bibliothèque.</p>
+<p>La base permet de rechercher rapidement un livre à partir de son titre (clé du dictionnaire). On
+obtient alors l’auteur du livre ainsi que le nombre d’exemplaire(s) empruntable(s) en stock.</p>
+<p>Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Base de données</span>
+<span class="n">base_livres</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Les misérables&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Victor Hugo&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="s1">&#39;Le dernier des Mohicans&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;James F. Cooper&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="s1">&#39;Un animal doué de raison&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Robert Merle&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+    <span class="s1">&#39;Le grand Meaulnes&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Alain Fournier&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;Notre-Dame de Paris&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Victor Hugo&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="s1">&#39;Les comtemplations&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Victor Hugo&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="n">base_livres</span><span class="p">[</span><span class="s1">&#39;Notre-Dame de Paris&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’auteur du livre <em>Notre-Dame de Paris</em> est <em>Victor Hugo</em> et il est disponible en <em>4</em> exemplaires.</p>
+<p><strong>Question</strong> : quel est le <em>type</em> de variable des valeurs des clés du dictionnaire ?</p>
+<div class="section" id="id8">
+<h3>Question 1<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">auteurs</span></code> qui, étant donnée une base de livres, retourne l’ensemble des auteurs de cette base.</p>
+</div>
+<div class="section" id="id9">
+<h3>Question 2<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">nb_exemplaires_total</span></code> qui, étant donnée une base de livres, retourne le nombre total d’exemplaires disponibles.</p>
+</div>
+<div class="section" id="id10">
+<h3>Question 3<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">est_disponible</span></code> qui, étant donnée une base de livres, un titre et un auteur, indique si le livre est disponible (la fonction renverra <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>. Si le livre et l’auteur correspondant n’existent pas, la fonction renverra <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div>
+<div class="section" id="id11">
+<h3>Question 4<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">titres_empruntables</span></code> qui, étant donné unee base de livres, retourne l’ensemble des livres empruntables.</p>
+</div>
+<div class="section" id="id12">
+<h3>Question 5<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">titres_auteur</span></code> qui, étant donnés un nom d’auteur et une base de livres, retourne l’ensemble des titres de livres écrits par cet auteur.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01-revisions-corr.html" title="previous page">Exercice : la moyenne</a>
+    <a class='right-next' id="next-link" href="Annalyse des Données-Statistiques.html" title="next page">Analyse de Données Massives</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

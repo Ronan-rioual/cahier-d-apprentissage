@@ -1,0 +1,5 @@
+#config
+titre: "cahier"
+logo: "images/logo.png"
+execute:
+  execute_notebooks: "off"

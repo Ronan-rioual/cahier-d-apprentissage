@@ -1,0 +1,916 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de Données Massives &#8212; My Jupyter Book</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Les environnements virtuels sur Annaconda" href="Commande_annaconda.html" />
+    <link rel="prev" title="TP sur les dictionnaires et les sets" href="02-tp_dictionnaires.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Cahier d’apprentissage
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html">
+   Exercice : la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-les-jours-de-la-semaine">
+   Exercice : les jours de la semaine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-inversion-de-l-ordre-d-une-liste">
+   Exercice : inversion de l’ordre d’une liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-nombres-pairs-et-impairs-dans-des-listes">
+   Exercice : nombres pairs et impairs dans des listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-des-etoiles">
+   Exercice : des étoiles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-copie-de-listes">
+   Exercice : copie de listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-le-jeu-du-ou-du">
+   Exercice : le jeu du + ou du -
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-des-etoiles-avec-fonction">
+   Exercice : des étoiles (avec fonction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-print-ou-return">
+   Exercice :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   ou
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     return
+    </span>
+   </code>
+   ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-fonction-du-maximum">
+   Exercice : fonction du maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-que-fait-ce-programme-1">
+   Exercice : que fait ce programme (1) ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-la-balance">
+   Exercice : la balance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-le-palindrome">
+   Exercice : le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-tri-de-mots">
+   Exercice : tri de mots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#introduction-aux-tests-unitaires-l-instruction-assert">
+   Introduction aux tests unitaires : l’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-revisions-corr.html#exercice-assert-avec-le-palindrome">
+   Exercice : assert avec le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-tp_dictionnaires.html">
+   TP sur les dictionnaires et les sets
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#qualitative">
+   Qualitative
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Commande_annaconda.html">
+   Les environnements virtuels sur Annaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html">
+   Site ressource pour les environnements virtuels avec anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#exemple-de-creation-d-environnement-virtuel">
+   exemple de création d’environnement virtuel:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#environnment-en-python-3-6">
+   Environnment en python 3.6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#environnement-en-python-3-7">
+   Environnement en python 3.7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#lister-les-environnement">
+   Lister les environnement :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#activer-un-environnement">
+   Activer un environnement :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#lister-les-modules">
+   Lister les modules:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#ajouter-un-module">
+   Ajouter un module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#qu-est-ce-qu-un-fichier-yaml">
+   Qu’est ce qu’un fichier YAML ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#creer-un-environnement-a-partir-d-un-fichier-yaml">
+   Créer un environnement à partir d’un fichier YAML :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#export-d-un-environnement-a-partir-d-un-fichier-yaml">
+   export d’un environnement à partir d’un fichier YAML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#executer-un-fichier-python-depuis-annaconda">
+   Executer un fichier python depuis Annaconda :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Environnement Anaconda.html#activer-un-environnement-puis-lancer-un-fichier-python-depuis-un-bat">
+   Activer un environnement puis lancer un fichier python depuis un .bat
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#moyenne">
+   Moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#mediane">
+   Médiane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#variance">
+   Variance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#ecart-type">
+   Écart type
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#fonction-gaussienne">
+   Fonction gaussienne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#outliers">
+   Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#centile">
+   Centile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#ecart-interquartile">
+   Écart interquartile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#la-covariance">
+   La covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#le-coefficient-de-correlation-de-pearson">
+   Le coefficient de corrélation de pearson
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rappel_Notions_Statistiques.html#la-boite-a-moustache">
+   La boite à moustache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html">
+   Exercice : la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-les-jours-de-la-semaine">
+   Exercice : les jours de la semaine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-inversion-de-l-ordre-d-une-liste">
+   Exercice : inversion de l’ordre d’une liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-nombres-pairs-et-impairs-dans-des-listes">
+   Exercice : nombres pairs et impairs dans des listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-des-etoiles">
+   Exercice : des étoiles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-copie-de-listes">
+   Exercice : copie de listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-le-jeu-du-ou-du">
+   Exercice : le jeu du + ou du -
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-des-etoiles-avec-fonction">
+   Exercice : des étoiles (avec fonction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-print-ou-return">
+   Exercice :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
+   ou
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     return
+    </span>
+   </code>
+   ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-fonction-du-maximum">
+   Exercice : fonction du maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-que-fait-ce-programme-1">
+   Exercice : que fait ce programme (1) ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-la-balance">
+   Exercice : la balance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-le-palindrome">
+   Exercice : le palindrome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-tri-de-mots">
+   Exercice : tri de mots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#introduction-aux-tests-unitaires-l-instruction-assert">
+   Introduction aux tests unitaires : l’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="revision.html#exercice-assert-avec-le-palindrome">
+   Exercice : assert avec le palindrome
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/pages/Annalyse des Données-Statistiques.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/pages/Annalyse des Données-Statistiques.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qualitative">
+   Qualitative
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagramme-en-barres">
+     Diagramme en barres
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagramme-circulaire">
+     Diagramme circulaire
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantitative">
+     Quantitative
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nuage-de-points">
+     Nuage de points
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Qualitative
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Diagramme en barres
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1><center> Statistiques sous Python (avec Pandas) </center></h1>
+<div class="section" id="analyse-de-donnees-massives">
+<h1>Analyse de Données Massives<a class="headerlink" href="#analyse-de-donnees-massives" title="Permalink to this headline">¶</a></h1>
+<p>Nous allons utiliser dans cet exercice le module pandas permettant l’analyse de données avec Python. La première instruction est d’installer le module, à faire dans un terminale de commande.
+<br></p>
+<ul class="simple">
+<li><p>pip install pandas</p></li>
+<li><p>pip install numpy</p></li>
+</ul>
+<p>Une fois le module est installé, nous pouvons lancer un notebook pour commencer notre programme. Il faut tout d’abord importer le module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importatioon du module pandas</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="donnees">
+<h1>Données<a class="headerlink" href="#donnees" title="Permalink to this headline">¶</a></h1>
+<p>Nous allons travailler sur des données collectées par un serveur (data.csv). Il a enregistré des informations sur chaque pourboire qu’il a reçu sur une période de quelques mois en travaillant dans un restaurant. Il a collecté plusieurs variables:</p>
+<ol class="simple">
+<li><p>facture en dollars,</p></li>
+<li><p>pourboire en dollars,</p></li>
+<li><p>sexe du payeur de factures,</p></li>
+<li><p>s’il y avait des fumeurs dans la fête,</p></li>
+<li><p>jour de la semaine,</p></li>
+<li><p>moment de la journée,</p></li>
+<li><p>taille de la fête.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Lire ces données dans le <code>Notebook</code> avec <code>read_csv()</code> de <code>pandas</code>.</p></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lecture d&#39;un fichier csv avec pandas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sur ces données, il est bien évidemment possible de voir quelques informations classiques.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Type des données</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taille</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#nombre d&#39;observation par champs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher l&#39;entête du jeu de données dans une liste</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="statistiques-descriptives-univaries">
+<h1>Statistiques descriptives univariés<a class="headerlink" href="#statistiques-descriptives-univaries" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Décrire et afficher toutes les variables quantitatives du jeu de données directement (fichier csv).
+ex: nombre d’obseravtions, moyenne, écart-type, min-max, quantile Q1, quantile Q2, quantile Q3</p></li>
+</ul>
+<ul class="simple">
+<li><p>Arrandire les valeurs (2 chiffres après la virgule)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Décrire juste une seule variable quantitative (ex: <code>”facture”</code>).</p></p></li>
+</ul>
+<ul class="simple">
+<li><p>Calculer sa moyenne, écart-type, variance, médiane, min, max, quantiles</p></li>
+</ul>
+</div>
+<div class="section" id="histogramme">
+<h1>Histogramme<a class="headerlink" href="#histogramme" title="Permalink to this headline">¶</a></h1>
+<p>Pour représenter graphiquement les variables d’un jeu de données, <code>pandas</code> met à disposition (via le module <code>matplotlib</code> utilisé par <code>pandas</code>) des fonctions graphiques.</p>
+<ul class="simple">
+<li><p>Réaliser un <strong>histogramme</strong>, en utilisant une version avec la fonction <code>hist()</code>.</p></li>
+<li><p>Une deuxième version avec la fonction <code>plot()</code>.</p></li>
+<li><p>Réaliser les deux fonctions précedentes, mais seulement pour une seule variable du jeu de données</p></li>
+</ul>
+</div>
+<div class="section" id="boites-a-moustaches">
+<h1>Boîtes à moustaches<a class="headerlink" href="#boites-a-moustaches" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Afficher les <strong>boîtes à moustaches</strong> du jeu de données.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Afficher <strong>la boîte à moustache</strong> d’une variable spécifique.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Afficher <strong>la boîte à moustache</strong> d’une variable spécifique en enlevant la gride.</p></li>
+</ul>
+</div>
+<div class="section" id="qualitative">
+<h1>Qualitative<a class="headerlink" href="#qualitative" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Afficher la table d’occurences (ou des effectifs) des variables qualitatives, ainsi que la table des proportions des modalités.</p></p></li>
+</ul>
+<ul class="simple">
+<li><p>Calculer le nombre d’occurence par modalité de la variable sex par deux versions (value_counts() et crosstab() )</p></li>
+</ul>
+<ul class="simple">
+<li><p>Calculer le nombre d’occurence normalisé par modalité de la variable sex par deux versions</p></li>
+</ul>
+<div class="section" id="diagramme-en-barres">
+<h2>Diagramme en barres<a class="headerlink" href="#diagramme-en-barres" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Réaliser un <strong>diagramme en barres</strong>, en utilisant le type <code>”bar”</code> pour <code>plot()</code>.</p></li>
+</ul>
+</div>
+<div class="section" id="diagramme-circulaire">
+<h2>Diagramme circulaire<a class="headerlink" href="#diagramme-circulaire" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Réaliser un <strong>diagramme circulaire</strong>, pour le tableau des effectifs de la variable sex produit par <code>crosstab()</code>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="statistiques-descriptives-bivariees">
+<h1>Statistiques descriptives bivariées<a class="headerlink" href="#statistiques-descriptives-bivariees" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quantitative">
+<h2>Quantitative<a class="headerlink" href="#quantitative" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Calculer la correlation entre les différentes variables du jeu de données.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Calculer la correlation entre deux variables du jeu de données.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Calculer la covarriance entre deux variables du jeu de données.</p></li>
+</ul>
+</div>
+<div class="section" id="nuage-de-points">
+<h2>Nuage de points<a class="headerlink" href="#nuage-de-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Afficher le nuage des points des deux variables X=facture et Y=pourboire</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Qualitative<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table croisée du nombre des fumeurs et non fumeurs selon leur sex dans le jeux de données</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table croisée du nombre des fumeurs et non fumeurs selon leur sex avec le nombre total de chaque ligne/colonne dans le jeux de données</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table croisée normalisée du nombre des fumeurs et non fumeurs selon leur sex dans le jeux de données</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la moyenne des factures, pourboires et size selon la variable sex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la moyenne des factures, pourboires, size groupée par sex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la moyenne, l&#39;écart-type, médiane, min et max de la variable facture groupés par sex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher les deux histogrammes de la variable facture selon le sex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher les boites à moustache de toutes les variables (facture, pourboire, size) selon le sex</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Diagramme en barres<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher le diagramme en barres du nombre des fumeurs et non fumeurs selon leur sex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher le diagramme en barres du nombre des fumeurs et non fumeurs selon leur sex normalisé</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02-tp_dictionnaires.html" title="previous page">TP sur les dictionnaires et les sets</a>
+    <a class='right-next' id="next-link" href="Commande_annaconda.html" title="next page">Les environnements virtuels sur Annaconda</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
